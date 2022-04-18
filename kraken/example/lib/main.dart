@@ -16,6 +16,9 @@ void top() => runApp( MyApp(title: 'Top VC',));
 @pragma('vm:entry-point')
 void bottom() => runApp( MyApp(title: 'Bottom VC',));
 
+@pragma('vm:entry-point')
+void kraken() => runApp( MyApp(title: 'Kraken Page',));
+
 void main() {
   KrakenWebsocket.initialize();
   PaintingBinding.instance?.imageCache?.maximumSize = 0;
@@ -48,7 +51,7 @@ class MyTestHomePage extends StatefulWidget {
 class _MyTestHomePageState extends State<MyTestHomePage> {
   late final String? title;
   final channel = const MethodChannel('devchannel');
-  Color appbarColor = Colors.blue;
+  Color appbarColor = Colors.blueGrey;
   _MyTestHomePageState({this.title, required this.appbarColor});
 
   Widget _getPushPage(BuildContext context) {
@@ -224,9 +227,10 @@ class _MyHomePageState extends State<MyBrowser> {
           // bundle: KrakenBundle.fromUrl('assets://assets/bundle.js'),
           // hub server 后 ip 更换成 本地
           // bundle: KrakenBundle.fromUrl('https://pre.t.youku.com/yep/page/kraken/m_pre/08a5sb2xno?isNeedBaseImage=1'),
-          bundle: KrakenBundle.fromUrl('http://30.77.123.253:3000/build/demo.init.js'),
+          // bundle: KrakenBundle.fromUrl('http://30.77.123.253:3000/build/demo.init.js'),
+          // bundle: KrakenBundle.fromUrl('https://t.youku.com/yep/page/kraken/m/hlxjr7'),
           // bundle: KrakenBundle.fromUrl('https://t.youku.com/yep/page/kraken/m/j73sp0s55m'),
-          // bundle: KrakenBundle.fromUrl('http://30.77.124.31:3000/build/demo.init.js'),
+          bundle: KrakenBundle.fromUrl('http://30.77.124.63:3000/build/demo.init.js'),
         ),
     ));
   }

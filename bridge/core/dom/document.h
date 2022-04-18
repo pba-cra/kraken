@@ -7,10 +7,10 @@
 #define KRAKENBRIDGE_DOCUMENT_H
 
 #include "container_node.h"
-#include "tree_scope.h"
+#include "core/dom/comment.h"
 #include "core/dom/document_fragment.h"
 #include "core/dom/text.h"
-#include "core/dom/comment.h"
+#include "tree_scope.h"
 
 namespace kraken {
 
@@ -19,6 +19,7 @@ namespace kraken {
 // (typically, HTML) resource.
 class Document : public Node, TreeScope {
   DEFINE_WRAPPERTYPEINFO();
+
  public:
   using ImplType = Document*;
 
@@ -34,7 +35,7 @@ class Document : public Node, TreeScope {
   std::string nodeName() const override;
   std::string nodeValue() const override;
   NodeType nodeType() const override;
-  Node * Clone(Document &, CloneChildrenFlag) const override;
+  Node* Clone(Document&, CloneChildrenFlag) const override;
 
   void IncrementNodeCount() { node_count_++; }
   void DecrementNodeCount() {

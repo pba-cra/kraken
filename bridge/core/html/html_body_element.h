@@ -15,7 +15,6 @@ class HTMLBodyElement : public HTMLElement {
   explicit HTMLBodyElement(Document&);
 };
 
-
-}
+}  // namespace kraken
 
 #endif  // KRAKENBRIDGE_CORE_HTML_HTML_BODY_ELEMENT_H_
